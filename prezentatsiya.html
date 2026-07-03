@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Памятка · Веритас · Балтика Леспром</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e5e5e5;
+            font-family: 'Arial Black', 'Impact', 'Helvetica Neue', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 10px;
+        }
+
+        .presentation {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .slide {
+            background: white;
+            padding: 35px 40px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.2s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: #1a1a1a;
+            background: #f0f0f0;
+            padding: 6px 16px 6px 14px;
+            border-radius: 30px;
+            border: 2px solid #d91a2b;
+            box-shadow: 3px 3px 0 #d91a2b;
+            text-transform: uppercase;
+        }
+        .logo span {
+            color: #d91a2b;
+        }
+
+        .red {
+            color: #d91a2b;
+        }
+        .bg-red {
+            background: #d91a2b;
+            color: white;
+            padding: 4px 16px;
+            display: inline-block;
+            font-weight: 900;
+        }
+        .black-bg {
+            background: #111;
+            color: white;
+            padding: 4px 16px;
+            display: inline-block;
+        }
+
+        .giant {
+            font-size: clamp(3.2rem, 14vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            word-break: break-word;
+        }
+        .giant-sub {
+            font-size: clamp(1.8rem, 5vw, 3.4rem);
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 100%;
+            height: 6px;
+            background: #111;
+            margin: 18px 0 20px 0;
+        }
+        .divider-red {
+            background: #d91a2b;
+            height: 5px;
+            width: 80px;
+            margin: 12px 0 18px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .stat {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #d91a2b;
+            line-height: 1.1;
+        }
+        .stat small {
+            font-size: 1.2rem;
+            color: #111;
+            font-weight: 700;
+            display: block;
+            margin-top: 4px;
+        }
+        .stat-block {
+            background: #f8f8f8;
+            padding: 18px 20px;
+            border-left: 10px solid #d91a2b;
+            margin-bottom: 12px;
+        }
+
+        .route-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 3px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        .route-time {
+            min-width: 60px;
+            color: #d91a2b;
+            font-weight: 900;
+        }
+
+        .badge-warning {
+            background: #111;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+        .bullet-list li {
+            padding: 8px 0 8px 28px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><rect x="0" y="8" width="24" height="8" fill="%23d91a2b"/></svg>') left center no-repeat;
+            background-size: 14px 10px;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .fine-box {
+            background: #fafafa;
+            border: 3px solid #d91a2b;
+            padding: 16px 24px;
+            margin: 10px 0;
+        }
+        .fine-box strong {
+            font-size: 1.6rem;
+            color: #d91a2b;
+        }
+
+        @media (max-width: 780px) {
+            .slide { padding: 24px 18px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 10px; }
+            .logo { position: static; margin-bottom: 15px; display: inline-block; }
+            .giant { font-size: 3.8rem; }
+        }
+        @media (max-width: 480px) {
+            .slide { padding: 18px 12px; }
+            .giant { font-size: 2.8rem; }
+        }
+
+        .text-regular {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-weight: 500;
+        }
+        .text-bold {
+            font-weight: 900;
+        }
+        .mono {
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+        }
+        .small-note {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #333;
+            background: #eee;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .flex-between {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon-large {
+            font-size: 2.2rem;
+            margin-right: 8px;
+        }
+
+        hr {
+            border: none;
+            border-top: 4px solid #111;
+            margin: 20px 0;
+        }
+        hr.red-hr {
+            border-top: 4px solid #d91a2b;
+        }
+
+        /* Стили для QR-кода */
+        .qr-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f8f8f8;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 2px solid #d91a2b;
+            flex-wrap: wrap;
+        }
+        .qr-container svg {
+            flex-shrink: 0;
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .qr-text {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+            font-family: Arial, sans-serif;
+        }
+        .qr-text .highlight {
+            color: #d91a2b;
+            font-weight: 900;
+        }
+        .qr-text .link {
+            word-break: break-all;
+            color: #1a1a1a;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Стили для кнопки "Поделиться" */
+        .share-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #d91a2b;
+            color: white;
+            border: none;
+            padding: 16px 28px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(217, 26, 43, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            letter-spacing: 1px;
+        }
+        .share-button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 32px rgba(217, 26, 43, 0.6);
+            background: #c01a2b;
+        }
+        .share-button:active {
+            transform: translateY(0px) scale(0.97);
+        }
+        .share-button svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            flex-shrink: 0;
+        }
+
+        /* Всплывающее уведомление */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #111;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            transform: translateY(150%);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border-left: 5px solid #d91a2b;
+            max-width: 350px;
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .toast .close-toast {
+            background: none;
+            border: none;
+            color: #999;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 12px;
+            padding: 0 4px;
+        }
+        .toast .close-toast:hover {
+            color: white;
+        }
+
+        /* Модальное окно поделиться */
+        .share-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1001;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .share-modal.show {
+            display: flex;
+        }
+        .share-modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: slideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+        }
+        .share-modal-content .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+            font-weight: 300;
+        }
+        .share-modal-content .close-modal:hover {
+            color: #d91a2b;
+        }
+        .share-modal-content h2 {
+            font-size: 1.8rem;
+            color: #d91a2b;
+            margin-bottom: 8px;
+            font-family: 'Arial Black', sans-serif;
+        }
+        .share-modal-content p {
+            color: #666;
+            margin-bottom: 24px;
+            font-family: Arial, sans-serif;
+        }
+        .share-modal-content .url-box {
+            background: #f5f5f5;
+            padding: 12px 16px;
+            border-radius: 8px;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            border: 2px dashed #ddd;
+            user-select: all;
+        }
+        .share-buttons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .share-btn {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: Arial, sans-serif;
+        }
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .share-btn.telegram { background: #0088cc; color: white; }
+        .share-btn.whatsapp { background: #25D366; color: white; }
+        .share-btn.vk { background: #0077FF; color: white; }
+        .share-btn.copy { background: #111; color: white; }
+        .share-btn.copy.copied { background: #22a67c; }
+        .share-btn.telegram:hover { background: #0077b3; }
+        .share-btn.whatsapp:hover { background: #1da85c; }
+        .share-btn.vk:hover { background: #0066cc; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 500px) {
+            .share-button {
+                bottom: 16px;
+                right: 16px;
+                padding: 12px 18px;
+                font-size: 0.9rem;
+            }
+            .share-button span { display: none; }
+            .share-modal-content { padding: 24px; }
+            .share-buttons-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .share-btn { font-size: 0.8rem; padding: 10px 12px; }
+            .share-modal-content h2 { font-size: 1.4rem; }
+            .toast { right: 16px; bottom: 80px; max-width: 280px; font-size: 0.85rem; padding: 12px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation">
+
+    <!-- СЛАЙД 1 · ТИТУЛ -->
+    <div class="slide" style="padding-bottom: 30px;">
+        <div class="logo">ООО <span>ВЕРИТАС</span></div>
+        <div style="margin-top: 10px;">
+            <div class="giant red">К ДЕЛУ!</div>
+            <div class="giant-sub" style="font-weight: 900; letter-spacing: 2px;">ПАМЯТКА СОТРУДНИКА</div>
+            <div class="divider" style="width: 120px; margin-top: 12px;"></div>
+            <div style="font-size: 1.3rem; font-weight: 600; color: #222; margin-top: 16px;">
+                Балтика Леспром · Санкт-Петербург · 2026
+            </div>
+            <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <span class="badge-warning">производство фанеры</span>
+                <span class="badge-warning" style="background:#d91a2b;">11 лет на рынке</span>
+            </div>
+        </div>
+        <div style="margin-top: 30px; border-top: 2px solid #eee; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; align-items: center;">
+            <div><span style="font-weight:300;">📍</span> 196643, пос. Саперный, Петрозаводское ш., 61</div>
+            <div><span style="font-weight:300;">🕒</span> смена 11,5 ч · график 2/2</div>
+        </div>
+    </div>
+
+    <!-- СЛАЙД 2 · ВАЖНО + ВСТРЕЧА -->
+    <div class="slide">
+        <div class="logo">ООО <span>ВЕРИТАС</span></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+            <div style="flex: 1.2; min-width: 220px;">
+                <div style="font-size: 2.0rem; font-weight: 900; color: #d91a2b;">ВАЖНО!</div>
+                <div style="font-size: 1.25rem; font-weight: 700; margin: 12px 0 6px 0;">Назови компанию:</div>
+                <div style="background: #111; color: white; padding: 12px 18px; font-size: 1.8rem; letter-spacing: 2px; display: inline-block; border-radius: 4px;">ООО “ВЕРИТАС”</div>
+                <div class="divider-red" style="margin-top: 20px;"></div>
+            </div>
+            <div style="flex: 2; min-width: 200px; background: #f7f7f7; padding: 16px 20px; border-left: 8px solid #d91a2b;">
+                <div style="font-weight: 900; font-size: 1.1rem;">ЗАХОД НА ОБЪЕКТ</div>
+                <ul class="bullet-list" style="margin-top: 6px;">
+                    <li>Встречает бригадир</li>
+                    <li>Отметка в списке смены</li>
+                    <li>Получаем задачи + план</li>
+                    <li>Оценка 1–3 смены</li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top: 12px; background: #eef2f5; padding: 6px 16px; border-radius: 40px; display: inline-block; font-weight: 600; font-size: 0.9rem;">📍 Петрозаводское ш., 61, стр. 1, пом. 25</div>
+    </div>
+
+    <!-- СЛАЙД 3 · ТРАНСФЕР + ГРАФИК + QR-КОД -->
+    <div class="slide">
+        <div class="logo">ООО <span>ВЕРИТАС</span></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <div style="flex: 1.3; min-width: 250px;">
+                <div style="font-weight: 900; font-size: 1.7rem; letter-spacing: 1px;">ТРАНСФЕР</div>
+                <div style="background: #111; color: white; padding: 2px 14px; display: inline-block; font-weight: 700; margin-bottom: 12px;">IVEKO 008</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px;">
+                    <div><span class="route-time">06:20</span> Шлиссельбург</div>
+                    <div><span class="route-time">06:25</span> Кировск (Ладога)</div>
+                    <div><span class="route-time">06:30</span> Кировск (автостанция)</div>
+                    <div><span class="route-time">06:40</span> Павлово</div>
+                    <div><span class="route-time">06:50</span> Отрадное (Мех.)</div>
+                    <div><span class="route-time">06:55</span> Отрадное (5 углов)</div>
+                </div>
+                <div style="margin-top: 12px; font-weight: 300; border-top: 2px solid #ddd; padding-top: 8px; color: #444;">Вечер: 18:10 – 18:55 (обратно)</div>
+            </div>
+            <div style="flex: 1; min-width: 180px; display: flex; flex-direction: column; gap: 12px;">
+                <div style="background: #f5f5f5; padding: 14px 18px; border-radius: 12px;">
+                    <div style="font-weight: 900; font-size: 1.2rem;">ГРАФИК</div>
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #d91a2b;">2/2</div>
+                    <div>день / ночь / отсыпной / выходной</div>
+                    <div style="margin-top: 12px;"><span class="mono">07:30–19:30</span> · <span class="mono">19:30–07:30</span></div>
+                    <div class="small-note" style="margin-top: 8px;">перерыв 11:30–12:00 / 12:00–12:30</div>
+                </div>
+                
+                <!-- QR-код -->
+                <div class="qr-container">
+                    <!-- SVG QR-код для ссылки на Яндекс.Карты -->
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="white"/>
+                        <rect x="5" y="5" width="25" height="25" fill="black"/>
+                        <rect x="10" y="10" width="15" height="15" fill="white"/>
+                        <rect x="70" y="5" width="25" height="25" fill="black"/>
+                        <rect x="75" y="10" width="15" height="15" fill="white"/>
+                        <rect x="5" y="70" width="25" height="25" fill="black"/>
+                        <rect x="10" y="75" width="15" height="15" fill="white"/>
+                        <rect x="35" y="5" width="5" height="5" fill="black"/>
+                        <rect x="45" y="5" width="5" height="5" fill="black"/>
+                        <rect x="35" y="15" width="5" height="5" fill="black"/>
+                        <rect x="45" y="15" width="5" height="5" fill="black"/>
+                        <rect x="55" y="15" width="5" height="5" fill="black"/>
+                        <rect x="65" y="15" width="5" height="5" fill="black"/>
+                        <rect x="55" y="25" width="5" height="5" fill="black"/>
+                        <rect x="65" y="25" width="5" height="5" fill="black"/>
+                        <rect x="35" y="35" width="5" height="5" fill="black"/>
+                        <rect x="45" y="35" width="5" height="5" fill="black"/>
+                        <rect x="55" y="35" width="5" height="5" fill="black"/>
+                        <rect x="65" y="35" width="5" height="5" fill="black"/>
+                        <rect x="35" y="45" width="5" height="5" fill="black"/>
+                        <rect x="45" y="45" width="5" height="5" fill="black"/>
+                        <rect x="55" y="45" width="5" height="5" fill="black"/>
+                        <rect x="65" y="45" width="5" height="5" fill="black"/>
+                        <rect x="35" y="55" width="5" height="5" fill="black"/>
+                        <rect x="45" y="55" width="5" height="5" fill="black"/>
+                        <rect x="55" y="55" width="5" height="5" fill="black"/>
+                        <rect x="65" y="55" width="5" height="5" fill="black"/>
+                        <rect x="55" y="65" width="5" height="5" fill="black"/>
+                        <rect x="65" y="65" width="5" height="5" fill="black"/>
+                        <rect x="35" y="75" width="5" height="5" fill="black"/>
+                        <rect x="45" y="75" width="5" height="5" fill="black"/>
+                        <rect x="55" y="75" width="5" height="5" fill="black"/>
+                        <rect x="65" y="75" width="5" height="5" fill="black"/>
+                        <rect x="75" y="35" width="5" height="5" fill="black"/>
+                        <rect x="85" y="35" width="5" height="5" fill="black"/>
+                        <rect x="75" y="45" width="5" height="5" fill="black"/>
+                        <rect x="85" y="45" width="5" height="5" fill="black"/>
+                        <rect x="75" y="55" width="5" height="5" fill="black"/>
+                        <rect x="85" y="55" width="5" height="5" fill="black"/>
+                        <rect x="75" y="65" width="5" height="5" fill="black"/>
+                        <rect x="85" y="65" width="5" height="5" fill="black"/>
+                        <rect x="35" y="85" width="5" height="5" fill="black"/>
+                        <rect x="45" y="85" width="5" height="5" fill="black"/>
+                        <rect x="55" y="85" width="5" height="5" fill="black"/>
+                        <rect x="65" y="85" width="5" height="5" fill="black"/>
+                    </svg>
+                    <div class="qr-text">
+                        <div><span class="highlight">📍 СКАНИРУЙ QR</span></div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Яндекс.Карты — Балтика Леспром</div>
+                        <div class="link" style="margin-top: 4px;">yandex.ru/maps/-/CTeByO34</div>
+                        <div style="font-size: 0.75rem; color: #666; margin-top: 4px;">или перейди по ссылке</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СЛАЙД 4 · ОПЛАТА + БОНУСЫ -->
+    <div class="slide">
+        <div class="logo">ООО <span>ВЕРИТАС</span></div>
+        <div class="grid-2">
+            <div>
+                <div class="stat-block">
+                    <div class="stat">3 500 ₽ <small>стажировка (10 смен)</small></div>
+                    <div class="stat" style="font-size: 2.8rem;">3 800 ₽ <small>после стажировки</small></div>
+                </div>
+                <div style="margin-top: 6px; background: #e6f0fa; padding: 8px 14px; border-radius: 30px; display: inline-block; font-weight: 700;">еженедельно · каждый четверг</div>
+            </div>
+            <div style="border-left: 4px solid #d91a2b; padding-left: 20px;">
+                <div style="font-weight: 900; font-size: 1.9rem; color: #d91a2b;">БОНУС</div>
+                <div style="font-size: 1.8rem; font-weight: 900;">+ 5 000 ₽</div>
+                <div style="font-weight: 600;">за друга (10 смен)</div>
+                <div style="margin-top: 18px; background: #111; color: white; padding: 4px 14px; display: inline-block; font-weight: 700;">НИКАКОЙ ТЯЖЁЛОЙ ФИЗИКИ</div>
+            </div>
+        </div>
+        <hr class="red-hr">
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+            <div><span style="font-weight: 300;">🖥️</span> управление пультом · контроль качества</div>
+            <div><span style="font-weight: 300;">⚙️</span> мониторинг оборудования</div>
+        </div>
+    </div>
+
+    <!-- СЛАЙД 5 · ФОРМА / МЕДОСМОТР / ШТРАФЫ -->
+    <div class="slide">
+        <div class="logo">ООО <span>ВЕРИТАС</span></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <div style="flex: 1; min-width: 200px; background: #f8f8f8; padding: 14px 18px; border-radius: 12px;">
+                <div style="font-weight: 900; font-size: 1.2rem;">ФОРМА</div>
+                <div><span style="font-weight: 900;">5 000 ₽</span> вычет, возврат <br>после <span style="font-weight: 900; color:#d91a2b;">22 смен</span></div>
+                <div style="margin-top: 14px; font-weight: 900; font-size: 1.1rem;">МЕДОСМОТР</div>
+                <div>до 4 500 ₽ (Колпино, по направлению)</div>
+            </div>
+            <div style="flex: 1.2; min-width: 200px; border: 3px solid #d91a2b; padding: 14px 20px; background: #fff7f7;">
+                <div style="font-weight: 900; font-size: 1.6rem; color: #d91a2b;">ШТРАФЫ</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px 30px; margin-top: 8px;">
+                    <div><span style="font-weight: 900; font-size: 1.3rem;">−5 000 ₽</span> <span class="small-note">несогласованный выход</span></div>
+                    <div><span style="font-weight: 900; font-size: 1.3rem; color:#d91a2b;">−30 000 ₽</span> <span class="small-note" style="background:#d91a2b; color:white;">алкоголь/наркотики</span></div>
+                </div>
+                <div style="margin-top: 6px; background: #111; color: white; padding: 6px 14px; display: inline-block; font-weight: 900;">УВОЛЬНЕНИЕ В ДЕНЬ НАРУШЕНИЯ</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СЛАЙД 6 · САМОЗАНЯТОСТЬ -->
+    <div class="slide">
+        <div class="logo">ООО <span>ВЕРИТАС</span></div>
+        <div style="font-weight: 900; font-size: 2.2rem; color: #d91a2b;">САМОЗАНЯТОСТЬ</div>
+        <div class="grid-2" style="margin-top: 10px;">
+            <div>
+                <div style="font-weight: 700; font-size: 1.1rem;">1. «МОЙ НАЛОГ»</div>
+                <ul class="bullet-list" style="font-size: 0.95rem;">
+                    <li>Скачать приложение</li>
+                    <li>«Стать самозанятым» (паспорт / Госуслуги / ИНН)</li>
+                    <li>Для граждан СНГ → МФЦ</li>
+                    <li>Справка → Прочее → Справка о постановке</li>
+                </ul>
+                <div style="background: #f0f0f0; padding: 8px 12px; border-radius: 8px; margin-top: 12px; font-weight: 600; font-size: 0.95rem;">
+                    ✅ Налог компенсируем, списывается автоматически через Youdo
+                </div>
+            </div>
+            <div style="background: #f5f5f5; padding: 16px 18px; border-radius: 12px;">
+                <div style="font-weight: 900; font-size: 1.2rem;">YOU DO</div>
+                <ul class="bullet-list" style="font-size: 0.9rem;">
+                    <li>Только мобильная версия сайта</li>
+                    <li>«Я хочу стать исполнителем»</li>
+                    <li>Подтвердить почту + принять приглашение</li>
+                    <li>Добавить реквизиты / карту</li>
+                </ul>
+                <div style="background: #d91a2b; color: white; padding: 4px 14px; border-radius: 30px; display: inline-block; font-weight: 700;">НЕ ПЛАТИТЬ 99 ₽</div>
+                <div style="margin-top: 6px
